@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Scale } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface HeroProps {
   language: 'en' | 'so';
@@ -34,7 +34,7 @@ export function Hero({ language }: HeroProps) {
       />
       <div className="container mx-auto px-6 relative z-20">
         <div className="flex items-center gap-3 mb-8">
-          <Scale className="w-12 h-12 text-blue-400" />
+          <img src="/logo.png" alt="Arji International" className="w-12 h-12" />
           <h2 className="text-2xl font-bold text-blue-400">ARJI INTERNATIONAL</h2>
         </div>
         <div className="max-w-3xl">
