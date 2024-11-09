@@ -31,7 +31,7 @@ export function CallToAction({ language }: CallToActionProps) {
       <section className="py-20 bg-gradient-to-r from-blue-700 to-blue-600">
         <div className="container mx-auto px-6 text-center">
           <div className="flex justify-center items-center gap-3 mb-8">
-            <img src="/logo.svg" alt="Arji International" className="w-8 h-8" />
+            <img src="/logo.png" alt="Arji International" className="w-8 h-8" />
             <h3 className="text-xl font-bold text-blue-300">ARJI INTERNATIONAL</h3>
           </div>
           <h2 className="text-4xl font-bold text-white mb-8">{content[language].title}</h2>
