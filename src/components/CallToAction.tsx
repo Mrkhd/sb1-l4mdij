@@ -13,17 +13,19 @@ export function CallToAction({ language }: CallToActionProps) {
 
   const content = {
     en: {
-      title: "Ready to Discuss Your Case?",
-      subtitle: "Our team of legal experts are ready to help you navigate complex international legal challenges.",
-      scheduleBtn: "Schedule a Call",
-      officesBtn: "Visit Our Offices"
+      title: 'Ready to Discuss Your Case?',
+      subtitle:
+        'Our team of legal experts are ready to help you navigate complex international legal challenges.',
+      scheduleBtn: 'Schedule a Call',
+      officesBtn: 'Visit Our Offices',
     },
     so: {
-      title: "Diyaar ma u tahay inaad nagala hadasho Kiiskaaga?",
-      subtitle: "Kooxdeena khubarada sharciga  ayaa diyaar u ah inay kaa caawiyaan xallinta caqabadaha sharciga ee caalamiga ah.",
-      scheduleBtn: "Ballan Samayso",
-      officesBtn: "Booqo Xafiisyadeena"
-    }
+      title: 'Diyaar ma u tahay inaad nagala hadasho Kiiskaaga?',
+      subtitle:
+        'Kooxdeena khubarada sharciga  ayaa diyaar u ah inay kaa caawiyaan xallinta caqabadaha sharciga ee caalamiga ah.',
+      scheduleBtn: 'Ballan Samayso',
+      officesBtn: 'Booqo Xafiisyadeena',
+    },
   };
 
   return (
@@ -31,10 +33,18 @@ export function CallToAction({ language }: CallToActionProps) {
       <section className="py-20 bg-gradient-to-r from-blue-700 to-blue-600">
         <div className="container mx-auto px-6 text-center">
           <div className="flex justify-center items-center gap-3 mb-8">
-            <img src="/logo.png" alt="Arji International" className="w-8 h-8" />
-            <h3 className="text-xl font-bold text-blue-300">ARJI INTERNATIONAL</h3>
+            <img
+              src="/ooo-06.png"
+              alt="Arji International"
+              className="w-8 h-8"
+            />
+            <h3 className="text-xl font-bold text-blue-300">
+              ARJI INTERNATIONAL
+            </h3>
           </div>
-          <h2 className="text-4xl font-bold text-white mb-8">{content[language].title}</h2>
+          <h2 className="text-4xl font-bold text-white mb-8">
+            {content[language].title}
+          </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             {content[language].subtitle}
           </p>
@@ -60,7 +70,7 @@ export function CallToAction({ language }: CallToActionProps) {
         onClose={() => setIsScheduleModalOpen(false)}
         language={language}
       />
-      
+
       <OfficesModal
         isOpen={isOfficesModalOpen}
         onClose={() => setIsOfficesModalOpen(false)}

@@ -1,5 +1,13 @@
 import React from 'react';
-import { X, Calendar, Clock, User, Mail, Phone as PhoneIcon, MessageSquare } from 'lucide-react';
+import {
+  X,
+  Calendar,
+  Clock,
+  User,
+  Mail,
+  Phone as PhoneIcon,
+  MessageSquare,
+} from 'lucide-react';
 
 interface ScheduleModalProps {
   isOpen: boolean;
@@ -9,28 +17,32 @@ interface ScheduleModalProps {
 
 const content = {
   en: {
-    title: "Schedule a Consultation",
-    fullName: "Full Name",
-    email: "Email",
-    phone: "Phone",
-    preferredDate: "Preferred Date",
-    preferredTime: "Preferred Time",
-    caseDetails: "Case Details",
-    submit: "Schedule Consultation"
+    title: 'Schedule a Consultation',
+    fullName: 'Full Name',
+    email: 'Email',
+    phone: 'Phone',
+    preferredDate: 'Preferred Date',
+    preferredTime: 'Preferred Time',
+    caseDetails: 'Case Details',
+    submit: 'Schedule Consultation',
   },
   so: {
-    title: "Ballan Qabso",
-    fullName: "Magaca Oo Buuxa",
-    email: "Iimaylka",
-    phone: "Telefoonka",
-    preferredDate: "Taariikhda La Rabo",
-    preferredTime: "Waqtiga La Rabo",
-    caseDetails: "Faahfaahinta Kiiska",
-    submit: "Xaqiiji Ballanta"
-  }
+    title: 'Ballan Qabso',
+    fullName: 'Magaca Oo Buuxa',
+    email: 'Iimaylka',
+    phone: 'Telefoonka',
+    preferredDate: 'Taariikhda La Rabo',
+    preferredTime: 'Waqtiga La Rabo',
+    caseDetails: 'Faahfaahinta Kiiska',
+    submit: 'Xaqiiji Ballanta',
+  },
 };
 
-export function ScheduleModal({ isOpen, onClose, language }: ScheduleModalProps) {
+export function ScheduleModal({
+  isOpen,
+  onClose,
+  language,
+}: ScheduleModalProps) {
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -47,15 +59,16 @@ export function ScheduleModal({ isOpen, onClose, language }: ScheduleModalProps)
         >
           <X className="w-5 h-5" />
         </button>
-        
+
         <h2 className="text-2xl font-bold mb-6">{content[language].title}</h2>
-        
-        <form 
+
+        <form
           name="consultation"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          onSubmit={handleSubmit} 
+          onSubmit={handleSubmit}
+          action="/thank-you"
           className="space-y-4"
         >
           <input type="hidden" name="form-name" value="consultation" />
