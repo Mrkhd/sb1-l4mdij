@@ -63,107 +63,109 @@ export function ScheduleModal({
         <h2 className="text-2xl font-bold mb-6">{content[language].title}</h2>
 
         <form
-          name="consultation"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
-          action="/thank-you"
-          className="space-y-4"
-        >
-          <input type="hidden" name="form-name" value="consultation" />
-          <p className="hidden">
-            <label>
-              Don't fill this out if you're human: <input name="bot-field" />
-            </label>
-          </p>
+  name="consultation"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/thank-you"
+  className="space-y-4"
+>
+  <input type="hidden" name="form-name" value="consultation" />
 
-          <div className="space-y-2">
-            <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-              <User className="w-4 h-4" />
-              {content[language].fullName}
-            </label>
-            <input
-              type="text"
-              name="fullName"
-              required
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
+  {/* Hidden honeypot field for bot protection */}
+  <p className="hidden">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field" />
+    </label>
+  </p>
 
-          <div className="space-y-2">
-            <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-              <Mail className="w-4 h-4" />
-              {content[language].email}
-            </label>
-            <input
-              type="email"
-              name="email"
-              required
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
+  {/* Full Name Field */}
+  <div className="space-y-2">
+    <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+      Full Name
+    </label>
+    <input
+      type="text"
+      name="fullName"
+      required
+      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    />
+  </div>
 
-          <div className="space-y-2">
-            <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-              <PhoneIcon className="w-4 h-4" />
-              {content[language].phone}
-            </label>
-            <input
-              type="tel"
-              name="phone"
-              required
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
+  {/* Email Field */}
+  <div className="space-y-2">
+    <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+      Email
+    </label>
+    <input
+      type="email"
+      name="email"
+      required
+      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    />
+  </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                <Calendar className="w-4 h-4" />
-                {content[language].preferredDate}
-              </label>
-              <input
-                type="date"
-                name="preferredDate"
-                required
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
+  {/* Phone Field */}
+  <div className="space-y-2">
+    <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+      Phone
+    </label>
+    <input
+      type="tel"
+      name="phone"
+      required
+      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    />
+  </div>
 
-            <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                <Clock className="w-4 h-4" />
-                {content[language].preferredTime}
-              </label>
-              <input
-                type="time"
-                name="preferredTime"
-                required
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-          </div>
+  {/* Preferred Date Field */}
+  <div className="grid grid-cols-2 gap-4">
+    <div className="space-y-2">
+      <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+        Preferred Date
+      </label>
+      <input
+        type="date"
+        name="preferredDate"
+        required
+        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      />
+    </div>
 
-          <div className="space-y-2">
-            <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-              <MessageSquare className="w-4 h-4" />
-              {content[language].caseDetails}
-            </label>
-            <textarea
-              name="caseDetails"
-              rows={3}
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
+    {/* Preferred Time Field */}
+    <div className="space-y-2">
+      <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+        Preferred Time
+      </label>
+      <input
+        type="time"
+        name="preferredTime"
+        required
+        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      />
+    </div>
+  </div>
 
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-          >
-            {content[language].submit}
-          </button>
-        </form>
+  {/* Case Details Field */}
+  <div className="space-y-2">
+    <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+      Case Details
+    </label>
+    <textarea
+      name="caseDetails"
+      rows={3}
+      className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    />
+  </div>
+
+  {/* Submit Button */}
+  <button
+    type="submit"
+    className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+  >
+    Submit
+  </button>
+</form>
       </div>
     </div>
   );
